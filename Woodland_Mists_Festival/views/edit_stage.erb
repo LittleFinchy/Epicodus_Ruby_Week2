@@ -1,0 +1,21 @@
+<h4>Stage Name: <%= @stage.stage_name %></h4>
+<h4>Music Style: <%= @stage.music_style %></h4>
+
+<form action="/stages" method="post">
+  <div class="form-group">
+    <label for="stage_name">Stage Name</label>
+    <input id="stage_name" name="stage_name" type="text">
+
+    <label for="music_style">Music Style</label>
+    <input id="music_style" name="music_style" type="text">
+  </div>
+  <button type="submit" class="btn">Go!</button>
+</form>
+
+<p><a href="/stages">Return to stage list</a></p>
+
+<form action="/stages/<%= @stage.id %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit">Delete stage</button>
+</form>

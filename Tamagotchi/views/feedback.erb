@@ -1,0 +1,10 @@
+<div style='width: 100vw; text-aline: center'>
+  <h1> <%= @@reply %> </h1>
+</div>
+
+<% unless @@arch.tossed %>
+  <a href="/">Next Day</a>
+<% else %>
+  <a href="/">Oh look! Your friend got you a new Avocado! <i>hurray...</i></a>
+  <% @@arch.tossed = false %>
+<% end %>

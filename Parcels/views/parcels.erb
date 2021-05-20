@@ -1,0 +1,13 @@
+<h1>Avalible Parcels</h1>
+
+<% if @parcels.any? %>
+  <ul>
+    <% @parcels.each do |parcel| %>
+      <li><a href="/parcels/<%= parcel.id %>"><%= parcel.l %> x <%= parcel.w %> x <%= parcel.h %>, <%= parcel.weight %> lbs</a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no parcels to display.</p>
+<% end %>
+
+<a href="/parcels/new">Add a new parcel</a>

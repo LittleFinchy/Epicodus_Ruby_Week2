@@ -1,0 +1,12 @@
+<h1>Riddles of the Sphinx</h1>
+<h3>Answer 3 Riddles to Enter</h3>
+
+<p><%= @riddle %></p>
+
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="guess">Guess</label>
+    <input id="guess" name="guess" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Next</button>
+</form>

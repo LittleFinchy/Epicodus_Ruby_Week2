@@ -1,0 +1,15 @@
+<h1>2 more tries</h1>
+
+<img src="https://i.imgur.com/czbv1RW.png" alt="Stage One">
+
+<h3>Word: <%= @@game.show %></h3>
+<br>
+<p>Letters already guessed: <%= @@game.incorrect_letters %></p>
+<br>
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="guess">Guess a letter</label>
+    <input id="guess" name="guess" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Go!</button>
+</form>

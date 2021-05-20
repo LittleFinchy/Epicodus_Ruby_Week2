@@ -1,0 +1,27 @@
+<h4>Update Parcel: <%= @parcel.l %> x <%= @parcel.w %> x <%= @parcel.h %>, <%= @parcel.weight %> lbs</h4>
+
+<form action="/parcels/<%= @parcel.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+
+  <label for="weight">Weight - lbs</label>
+  <input id="weight" name="weight" type="text">
+
+  <label for="length">Length - in</label>
+  <input id="l" name="l" type="text">
+
+  <label for="w">Width - in</label>
+  <input id="w" name="w" type="text">
+  
+  <label for="height">Height - in</label>
+  <input id="h" name="h" type="text">
+  
+  <button type="submit">Update</button>
+</form>
+
+<p><a href="/parcels">Return to parcel list</a></p>
+
+<form action="/parcels/<%= @parcel.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit">Delete parcel</button>
+</form>

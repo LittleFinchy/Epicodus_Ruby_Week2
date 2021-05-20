@@ -1,0 +1,34 @@
+<div style="width:100vw; height: 100vh; padding-top: 30px; background: <%= @@maze.current_room.name %>; text-align:center">
+
+<% if @@maze.current_room.name == "yellow" %>
+  <% @@maze.key_status = "Found!" %>
+<% end %>
+
+<% if @@maze.current_room.name == "blue" && @@maze.key_status == "Found!" %>
+  <a href="/end" style="padding: 40px; background: white; margin-top: 100px">You made it to the exit! Use your key!</a>
+<% else %>
+  <% ["up", "right", "down", "left"].each do |wall| %>
+    <% unless @@maze.current_room.walls.include?(wall) %>
+      <form action="/<%= wall %>" method="post">
+        <button type="submit" class="btn">Go <%= wall.upcase %></button>
+      </form>
+      <br>
+    <% end %>
+  <% end %>
+
+<br>
+
+<p>
+  Walls: <%= @@maze.current_room.walls.join(" ") %><br>
+  Location: <%= @@maze.current_room.location %><br>
+</p>
+
+<div style="padding: 50px">
+  <p>
+    <h3>You are in the <%= @@maze.current_room.name %> room!</h3>
+    You must find the key to exit the maze.<br>
+    Key Status: <%= @@maze.key_status %>
+  </p>
+</div>
+</div>
+<% end %>

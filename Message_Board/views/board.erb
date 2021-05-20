@@ -1,0 +1,25 @@
+<h1>Board Name: <%= @board.name %></h1>
+
+<h4>Board Messages</h4>
+
+  <% if @board.messages %>
+    <% @board.messages.each do |message| %>
+      <a href="/boards/<%= @board.id %>/messages/<%= message.id %>"><%= message.content %></a>
+      <br>
+    <% end %>
+  <% else %>
+    <p>There are no messages listed for this board yet.</p>
+  <% end %>
+
+<h4>Add a message:</h4>
+
+<form action="/boards/<%= @board.id %>/messages" method="post">
+  <div class="form-group">
+    <label for="content">Message</label>
+    <input id="content" name="content" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Add message</button>
+</form>
+
+<p><a href="/boards/<%= @board.id %>/edit">Edit board</a></p>
+<a href="/boards">Return to board list</a>
