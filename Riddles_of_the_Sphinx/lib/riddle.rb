@@ -4,7 +4,6 @@ class Riddle
     "What can run, but never walks; has a mouth, but never talks; has a head, but never weeps; has a bed, but never sleeps?" => "River",
     "What is large, yet never grows; has roots that cannot be seen; and is taller than trees?" => "Mountain",
     "At night they come without being fetched, and by day they are lost without being stolen." => "Stars",
-    "too far" => "stop",
   }
 
   @@index = 0

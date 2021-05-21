@@ -65,7 +65,6 @@ class Maze
         end
       end
     end
-    print @grid
     @@current_room = @grid[0][0]
   end
 

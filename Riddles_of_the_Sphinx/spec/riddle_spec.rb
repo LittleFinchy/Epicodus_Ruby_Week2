@@ -20,8 +20,8 @@ describe("Riddle") do
 
   describe("#check") do
     it("returns true if guess matches answer") do
-      test = Riddle.new("River")
-      expect(test.check).to eq(true)
+      temp = Riddle.new("Stars")
+      expect(temp.check).to eq(true)
     end
   end
 end
